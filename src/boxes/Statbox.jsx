@@ -43,7 +43,7 @@ const Statbox = ({ data }) => {
       </div>
 
       <div className="text-sm font-medium">
-        <span className={`${trendcolor} mr-1}`}>{comparisonValue}</span>
+        <span className={`${trendcolor} mr-1`}>{comparisonValue}</span>
         <span className="text-gray-500">{comparisonText}</span>
       </div>
     </div>

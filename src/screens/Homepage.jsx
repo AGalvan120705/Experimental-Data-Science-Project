@@ -15,10 +15,10 @@ const homepage = () => {
 
   return (
     <>
-      {/* Primary Sugar Aware box - left column two rows */}
-      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-2 pt-20 px-8">
-        {/* // I want to add a photo to the Main overview box of towerbridge */}
-        <div className="p-8 bg-linear-to-br from-[#1a3a6c] to-[#0b2545] rounded-xl shadow-md">
+      {/* Main grid: Sugar Aware (left, spans 2 rows) + Right column boxes */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-20 px-8">
+        {/* Left column - Sugar Aware box spanning 2 rows */}
+        <div className="md:row-span-2 p-8 bg-linear-to-br from-[#1a3a6c] to-[#0b2545] rounded-xl shadow-md">
           <span className="inline-flex items-center rounded-full border border-white/30 bg-gray-500/25 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
             ♡ Public Health Intelligence
           </span>
@@ -54,26 +54,24 @@ const homepage = () => {
             </button>
           </div>
         </div>
-      </div>
 
+        {/* Right column - Current Prevalence box */}
+        <div>
+          <Statbox
+            data={{
+              label: "Current Prevalance",
+              value: "15.2%", //need to get update to correct value
+              comparisonText: "from last year",
+              comparisonValue: "+2.1%", //need to update to correct value
+              trend: "up", // can be 'up' or 'down' based on the trend
+              iconBg: "bg-green-100",
+              iconColor: "text-green-700",
+              icon: Activity,
+            }}
+          />
+        </div>
 
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
-        <Statbox
-          data={{
-            label: "Current Prevalance",
-            value: "15.2%", //need to get update to correct value
-            comparisonText: "from last year",
-            comparisonValue: "+2.1%", //need to update to correct value
-            trend: "down", // can be 'up' or 'down' based on the trend
-            iconBg: "bg-green-100",
-            iconColor: "text-green-700",
-            icon: Activity,
-          }}
-        />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-6">
+        {/* Right column - Personal Risk Assessment box */}
         <div className="p-8 bg-linear-to-r from-[#7CA982] to-[#519872] rounded-xl shadow-md">
           <div className="flex justify-between items-start">
             <div
@@ -93,7 +91,7 @@ const homepage = () => {
           <div className="space-y-1 mt-4">
             <a
               href="/assessment"
-              className="text-white font-semibold visited:text-white"
+              className="text-white font-semibold"
             >
               {" "}
               Take Assessment →{" "}
@@ -102,7 +100,7 @@ const homepage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6 px-8">
         <Statbox
           data={{
             label: "Borough Prevalance",
@@ -114,9 +112,7 @@ const homepage = () => {
             icon: Activity,
           }}
         />
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
         <Statbox
           data={{
             label: "Highest Risk Ward",
@@ -127,9 +123,7 @@ const homepage = () => {
             icon: TrendingUp,
           }}
         />
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
         <Statbox
           data={{
             label: "Obesity Rate (Adults)",
@@ -141,9 +135,7 @@ const homepage = () => {
             icon: UsersRound,
           }}
         />
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
         <Statbox
           data={{
             label: "Deprivation Rank",
@@ -156,15 +148,17 @@ const homepage = () => {
         />
       </div>
 
-      <h2 className="text-black font-extrabold text-2xl mt-4">
-        Platform Capabilities
-      </h2>
-      <p className="text-gray-600 mt-2 mb-4">
-        Explore our features to provide insights and recommendations for
-        actionable change in Tower Hamlets.
-      </p>
+      <div className="px-8">
+        <h2 className="text-black font-extrabold text-2xl mt-8">
+          Platform Capabilities
+        </h2>
+        <p className="text-gray-600 mt-2 mb-4">
+          Explore our features to provide insights and recommendations for
+          actionable change in Tower Hamlets.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-6 px-8 gap-6 pb-12">
         {/* // has a the trend down icon... needs to get fix 
         // //need to add button to navigate to the dashboard3
         */}
@@ -172,18 +166,12 @@ const homepage = () => {
           data={{
             value: "Data Intelligence",
             comparisonText:
-              "Data vizualizations and insights across all 20 wards in Tower Hamlets, normalized for age and deprivation indices.",
+              "Data visualisations and insights across all 20 wards in Tower Hamlets, normalized for age and deprivation indices.",
             iconBg: "bg-gradient-to-br from-blue-600 to-blue-900",
             iconColor: "text-white",
             icon: BrainCircuit,
           }}
         />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
-        {/* 
-      //need to add button to navigate to the dashboard
-       */}
         <Statbox
           data={{
             value: "Predictive Modelling",
@@ -194,21 +182,6 @@ const homepage = () => {
             icon: TrendingUp,
           }}
         />
-        <div className="space-y-1 mt-4">
-          <a
-            href="/assessment"
-            className="text-[#7ca982] font-semibold visited:text-white"
-          >
-            {" "}
-            Take Assessment →{" "}
-          </a>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6">
-        {/* // has a the trend down icon... needs to get fix
-      // need to add button to navigate to the interactive map
-       */}
         <Statbox
           data={{
             value: "Geographic Mapping",
