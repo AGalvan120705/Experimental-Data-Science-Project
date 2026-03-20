@@ -61,7 +61,7 @@ const homepage = () => {
             data={{
               label: "Current Prevalance",
               value: "15.2%", //need to get update to correct value
-              comparisonText: "from last year",
+              comparisonText: " from last year",
               comparisonValue: "+2.1%", //need to update to correct value
               trend: "up", // can be 'up' or 'down' based on the trend
               iconBg: "bg-green-100",
@@ -91,7 +91,7 @@ const homepage = () => {
           <div className="space-y-1 mt-4">
             <a
               href="/assessment"
-              className="text-white font-semibold"
+              className="text-white font-semibold transition-colors hover:text-gray-200"
             >
               {" "}
               Take Assessment →{" "}
@@ -170,6 +170,10 @@ const homepage = () => {
             iconBg: "bg-gradient-to-br from-blue-600 to-blue-900",
             iconColor: "text-white",
             icon: BrainCircuit,
+            linkText: "Explore Data Intelligence →",
+            linkColor: "text-blue-700",
+            linkHoverColor: "hover:text-blue-800",
+            linkHref: "/dashboard",
           }}
         />
         <Statbox
@@ -180,6 +184,10 @@ const homepage = () => {
             iconBg: "bg-gradient-to-br from-[#7ca982] to-[#4B7F52]",
             iconColor: "text-white",
             icon: TrendingUp,
+            linkText: "View Forecast Model →",
+            linkColor: "text-[#4B7F52]",
+            linkHoverColor: "hover:text-[#3f6b45]",
+            linkHref: "/dashboard",
           }}
         />
         <Statbox
@@ -190,6 +198,10 @@ const homepage = () => {
             iconBg: "bg-gradient-to-br from-[#6CD4FF] to-[#0075F2]",
             iconColor: "text-white",
             icon: MapPin,
+            linkText: "Open Interactive Map →",
+            linkColor: "text-[#0075F2]",
+            linkHoverColor: "hover:text-[#005fc2]",
+            linkHref: "/map",
           }}
         />
       </div>

@@ -10,7 +10,11 @@ const Statbox = ({ data }) => {
     trend,
     iconBg,
     iconColor,
-    icon: Icon
+    icon: Icon,
+    linkText,
+    linkColor,
+    linkHoverColor,
+    linkHref
   } = data;
 
   let trendcolor = '';
@@ -23,6 +27,8 @@ const Statbox = ({ data }) => {
     trendcolor = 'text-green-500';
     TrendIcon = TrendingDown;
   }
+
+  const showFooterLink = Boolean(linkText && linkHref);
 
   return (
     <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-md w-full flex flex-col gap-4">
@@ -43,9 +49,20 @@ const Statbox = ({ data }) => {
       </div>
 
       <div className="text-sm font-medium">
-        <span className={`${trendcolor} mr-1`}>{comparisonValue}</span>
+        <span className={`${trendcolor}`}>{comparisonValue}</span>
         <span className="text-gray-500">{comparisonText}</span>
       </div>
+
+      {showFooterLink && (
+        <div className="pt-1">
+          <a
+            href={linkHref}
+            className={`text-sm font-semibold transition-colors ${linkColor || 'text-blue-600'} ${linkHoverColor || 'hover:text-blue-700'}`}
+          >
+            {linkText}
+          </a>
+        </div>
+      )}
     </div>
   );
 };
