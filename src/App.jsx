@@ -7,7 +7,7 @@ import Screen2 from './screens/InteractiveMap';
 function App() {
   return (
     <Router>
-      <div className="bg-[#eef4ed] min-h-screen w-screen">
+      <div className="bg-[#f3f4f6] min-h-screen w-screen">
         <Header/>
         <Routes>
           <Route path="/" element={<Homepage />} />
