@@ -1,11 +1,11 @@
-import {Menu} from 'lucide-react'
-
-const Header = () => {
+const Header = ({navbarWidth}) => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow z-50 p-4 flex items-center justify-start gap-3">
-      <Menu className="w-6 h-6 text-gray-800" />
-      <p className="font-bold text-black text-xl">SugarAware</p>
-    </nav>
+    <header className="fixed top-0 right-0 z-40 bg-white shadow-sm backdrop-blur transition-all duration-300 px-6 flex items-center gap-4 h-20 border-b border-slate-200 " style={{ left: `${navbarWidth}px` }}>
+      <div>      
+        <p className="font-bold text-black text-xl">SugarAware</p>
+        <p className="text-gray-500 text-sm">Type 2 Diabetes Awareness Platform</p>
+      </div>
+    </header>
   );
 };
 
