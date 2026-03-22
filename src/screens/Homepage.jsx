@@ -15,12 +15,26 @@ const homepage = () => {
 
   return (
     <>
+      <div className="grid grid-cols-1 md:grid-cols-1 pt-20 px-8 gap-6">
+      <div className="md:grid-cols-1 gap-6 px-6 py-4 bg-[#748CAB] rounded-xl shadow-md">
+          <span className="inline-flex items-center rounded-full border border-white/30 bg-[#1a3a6c] px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
+            What is Type 2 diabetes?
+          </span>
+          <p className="text-white">
+            Type 2 diabetes is a long term medical condition that affects the way your body processes blood sugar (glucose). It is characterized by insulin resistance, where the body's cells do not respond properly to insulin, and eventually leads to high blood sugar levels. 
+            </p>
+            <p className="text-white mt-2">
+            If left unmanaged, type 2 diabetes can lead to serious health complications such as heart disease, kidney damage, nerve damage, and vision problems. It is important to manage type 2 diabetes through lifestyle changes, medication, and regular monitoring of blood sugar levels to prevent complications and maintain overall health.
+          </p>
+        </div>
+
+      </div>
       {/* Main grid: Sugar Aware (left, spans 2 rows) + Right column boxes */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-20 px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 px-8">
         {/* Left column - Sugar Aware box spanning 2 rows */}
         <div className="md:row-span-2 p-8 bg-linear-to-br from-[#1a3a6c] to-[#0b2545] rounded-xl shadow-md">
           <span className="inline-flex items-center rounded-full border border-white/30 bg-gray-500/25 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
-            ♡ Public Health Intelligence
+            ♡ Public Health insights
           </span>
 
           <h2 className="text-4xl font-bold text-white mb-4 pt-4">
@@ -60,10 +74,10 @@ const homepage = () => {
           <Statbox
             data={{
               label: "Current Prevalance",
-              value: "15.2%", //need to get update to correct value
-              comparisonText: " from last year",
-              comparisonValue: "+2.1%", //need to update to correct value
-              trend: "up", // can be 'up' or 'down' based on the trend
+              value: "7.2%",
+              comparisonText: " since 2012/13",
+              comparisonValue: "+0.9%",
+              trend: "up",
               iconBg: "bg-green-100",
               iconColor: "text-green-700",
               icon: Activity,
@@ -104,9 +118,9 @@ const homepage = () => {
         <Statbox
           data={{
             label: "Borough Prevalance",
-            value: "15.2%", //need to get update to correct value
-            comparisonText: "Higher than London average (7.8%)",
-            trend: "up", // can be 'up' or 'down' based on the trend
+            value: "7.2%",
+            comparisonText: "same as London average (7.2%)",
+            trend: "up",
             iconBg: "bg-blue-100",
             iconColor: "text-blue-700",
             icon: Activity,

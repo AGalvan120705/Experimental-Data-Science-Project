@@ -11,8 +11,8 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/screen1" element={<Screen1 />} />
-          <Route path="/screen2" element={<Screen2 />} />
+          <Route path="/dashboard" element={<Screen1 />} />
+          <Route path="/interactiveMap" element={<Screen2 />} />
         </Routes>
       </div>
     </Router>
