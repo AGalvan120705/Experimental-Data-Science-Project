@@ -15,7 +15,7 @@ const homepage = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-1 pt-20 px-8 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-1 pt-20 px-8 gap-6">
       <div className="md:grid-cols-1 gap-6 px-6 py-4 bg-[#748CAB] rounded-xl shadow-md">
           <span className="inline-flex items-center rounded-full border border-white/30 bg-[#1a3a6c] px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
             What is Type 2 diabetes?
