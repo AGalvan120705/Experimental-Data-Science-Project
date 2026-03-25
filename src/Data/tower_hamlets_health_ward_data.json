@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-24T17:45:55.277628",
+    "data_period": "2024-25",
+    "source": {
+      "health": "NHS Digital QOF 2024-25 Practice Level Data"
+    },
+    "area": "Tower Hamlets",
+    "ward_count": 20
+  },
+  "wards": {
+    "Bethnal Green East": {
+      "diabetes": 5.31,
+      "obesity": 7.98
+    },
+    "Bethnal Green West": {
+      "diabetes": null,
+      "obesity": null
+    },
+    "Blackwall & Cubitt Town": {
+      "diabetes": 4.9,
+      "obesity": 9.1
+    },
+    "Bow East": {
+      "diabetes": 7.34,
+      "obesity": 10.51
+    },
+    "Bow West": {
+      "diabetes": 8.15,
+      "obesity": 13.19
+    },
+    "Bromley North": {
+      "diabetes": 6.89,
+      "obesity": 9.97
+    },
+    "Bromley South": {
+      "diabetes": 8.39,
+      "obesity": 10.39
+    },
+    "Canary Wharf": {
+      "diabetes": 3.68,
+      "obesity": 7.25
+    },
+    "Island Gardens": {
+      "diabetes": 5.01,
+      "obesity": 7.98
+    },
+    "Lansbury": {
+      "diabetes": 7.6,
+      "obesity": 13.94
+    },
+    "Limehouse": {
+      "diabetes": 8.38,
+      "obesity": 14.03
+    },
+    "Mile End": {
+      "diabetes": 6.92,
+      "obesity": 11.93
+    },
+    "Poplar": {
+      "diabetes": 9.91,
+      "obesity": 15.01
+    },
+    "Shadwell": {
+      "diabetes": 11.89,
+      "obesity": 13.78
+    },
+    "Spitalfields & Banglatown": {
+      "diabetes": 7.99,
+      "obesity": 9.56
+    },
+    "St Dunstan's": {
+      "diabetes": null,
+      "obesity": null
+    },
+    "St Katharine's & Wapping": {
+      "diabetes": 4.54,
+      "obesity": 7.72
+    },
+    "Stepney Green": {
+      "diabetes": 10.4,
+      "obesity": 11.65
+    },
+    "Weavers": {
+      "diabetes": 7.99,
+      "obesity": 10.62
+    },
+    "Whitechapel": {
+      "diabetes": 7.16,
+      "obesity": 9.35
+    }
+  }
+}
