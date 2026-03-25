@@ -6,88 +6,151 @@
       "health": "NHS Digital QOF 2024-25 Practice Level Data"
     },
     "area": "Tower Hamlets",
-    "ward_count": 20
+    "ward_count": 20,
+    "sources": {
+      "deprivation": "Census 2021 Household Deprivation (TS011)"
+    }
   },
   "wards": {
     "Bethnal Green East": {
       "diabetes": 5.31,
-      "obesity": 7.98
+      "obesity": 7.98,
+      "deprivation": 9,
+      "national_percentile": 89.1,
+      "pct_deprived": 60.2
     },
     "Bethnal Green West": {
       "diabetes": null,
-      "obesity": null
+      "obesity": null,
+      "deprivation": 9,
+      "national_percentile": 85.7,
+      "pct_deprived": 57.0
     },
     "Blackwall & Cubitt Town": {
       "diabetes": 4.9,
-      "obesity": 9.1
+      "obesity": 9.1,
+      "deprivation": 3,
+      "national_percentile": 33.9,
+      "pct_deprived": 44.3
     },
     "Bow East": {
       "diabetes": 7.34,
-      "obesity": 10.51
+      "obesity": 10.51,
+      "deprivation": 7,
+      "national_percentile": 65.8,
+      "pct_deprived": 49.8
     },
     "Bow West": {
       "diabetes": 8.15,
-      "obesity": 13.19
+      "obesity": 13.19,
+      "deprivation": 8,
+      "national_percentile": 76.8,
+      "pct_deprived": 54.8
     },
     "Bromley North": {
       "diabetes": 6.89,
-      "obesity": 9.97
+      "obesity": 9.97,
+      "deprivation": 9,
+      "national_percentile": 90.1,
+      "pct_deprived": 59.6
     },
     "Bromley South": {
       "diabetes": 8.39,
-      "obesity": 10.39
+      "obesity": 10.39,
+      "deprivation": 8,
+      "national_percentile": 85.0,
+      "pct_deprived": 57.4
     },
     "Canary Wharf": {
       "diabetes": 3.68,
-      "obesity": 7.25
+      "obesity": 7.25,
+      "deprivation": 2,
+      "national_percentile": 23.5,
+      "pct_deprived": 41.6
     },
     "Island Gardens": {
       "diabetes": 5.01,
-      "obesity": 7.98
+      "obesity": 7.98,
+      "deprivation": 5,
+      "national_percentile": 53.2,
+      "pct_deprived": 49.3
     },
     "Lansbury": {
       "diabetes": 7.6,
-      "obesity": 13.94
+      "obesity": 13.94,
+      "deprivation": 9,
+      "national_percentile": 90.4,
+      "pct_deprived": 60.1
     },
     "Limehouse": {
       "diabetes": 8.38,
-      "obesity": 14.03
+      "obesity": 14.03,
+      "deprivation": 3,
+      "national_percentile": 28.2,
+      "pct_deprived": 42.1
     },
     "Mile End": {
       "diabetes": 6.92,
-      "obesity": 11.93
+      "obesity": 11.93,
+      "deprivation": 8,
+      "national_percentile": 83.3,
+      "pct_deprived": 57.1
     },
     "Poplar": {
       "diabetes": 9.91,
-      "obesity": 15.01
+      "obesity": 15.01,
+      "deprivation": 9,
+      "national_percentile": 92.1,
+      "pct_deprived": 62.3
     },
     "Shadwell": {
       "diabetes": 11.89,
-      "obesity": 13.78
+      "obesity": 13.78,
+      "deprivation": 10,
+      "national_percentile": 96.3,
+      "pct_deprived": 65.4
     },
     "Spitalfields & Banglatown": {
       "diabetes": 7.99,
-      "obesity": 9.56
+      "obesity": 9.56,
+      "deprivation": 8,
+      "national_percentile": 78.0,
+      "pct_deprived": 54.4
     },
     "St Dunstan's": {
       "diabetes": null,
-      "obesity": null
+      "obesity": null,
+      "deprivation": 9,
+      "national_percentile": 94.7,
+      "pct_deprived": 62.6
     },
     "St Katharine's & Wapping": {
       "diabetes": 4.54,
-      "obesity": 7.72
+      "obesity": 7.72,
+      "deprivation": 1,
+      "national_percentile": 12.1,
+      "pct_deprived": 39.2
     },
     "Stepney Green": {
       "diabetes": 10.4,
-      "obesity": 11.65
+      "obesity": 11.65,
+      "deprivation": 10,
+      "national_percentile": 97.4,
+      "pct_deprived": 67.7
     },
     "Weavers": {
       "diabetes": 7.99,
-      "obesity": 10.62
+      "obesity": 10.62,
+      "deprivation": 8,
+      "national_percentile": 79.1,
+      "pct_deprived": 54.4
     },
     "Whitechapel": {
       "diabetes": 7.16,
-      "obesity": 9.35
+      "obesity": 9.35,
+      "deprivation": 6,
+      "national_percentile": 56.3,
+      "pct_deprived": 50.1
     }
   }
 }

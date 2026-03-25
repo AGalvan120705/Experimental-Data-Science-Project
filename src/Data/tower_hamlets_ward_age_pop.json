@@ -1,0 +1,104 @@
+{
+  "wards": {
+    "Bethnal Green": {
+      "ward_code": "E05009317",
+      "total_population": 21089,
+      "median_age": 29
+    },
+    "Blackwall & Cubitt Town": {
+      "ward_code": "E05009318",
+      "total_population": 21434,
+      "median_age": 30
+    },
+    "Bow East": {
+      "ward_code": "E05009319",
+      "total_population": 19524,
+      "median_age": 31
+    },
+    "Bow West": {
+      "ward_code": "E05009320",
+      "total_population": 13717,
+      "median_age": 32
+    },
+    "Bromley North": {
+      "ward_code": "E05009321",
+      "total_population": 11701,
+      "median_age": 31
+    },
+    "Bromley South": {
+      "ward_code": "E05009322",
+      "total_population": 13982,
+      "median_age": 29
+    },
+    "Canary Wharf": {
+      "ward_code": "E05009323",
+      "total_population": 17983,
+      "median_age": 30
+    },
+    "Island Gardens": {
+      "ward_code": "E05009324",
+      "total_population": 15313,
+      "median_age": 32
+    },
+    "Lansbury": {
+      "ward_code": "E05009325",
+      "total_population": 21699,
+      "median_age": 29
+    },
+    "Limehouse": {
+      "ward_code": "E05009326",
+      "total_population": 6557,
+      "median_age": 33
+    },
+    "Mile End (Tower Hamlets)": {
+      "ward_code": "E05009327",
+      "total_population": 21652,
+      "median_age": 29
+    },
+    "Poplar (Tower Hamlets)": {
+      "ward_code": "E05009328",
+      "total_population": 8073,
+      "median_age": 29
+    },
+    "St Dunstan's": {
+      "ward_code": "E05009329",
+      "total_population": 14748,
+      "median_age": 29
+    },
+    "St Katharine's & Wapping": {
+      "ward_code": "E05009330",
+      "total_population": 11961,
+      "median_age": 33
+    },
+    "St Peter's (Tower Hamlets)": {
+      "ward_code": "E05009331",
+      "total_population": 19780,
+      "median_age": 30
+    },
+    "Shadwell": {
+      "ward_code": "E05009332",
+      "total_population": 13279,
+      "median_age": 30
+    },
+    "Spitalfields & Banglatown": {
+      "ward_code": "E05009333",
+      "total_population": 13331,
+      "median_age": 29
+    },
+    "Stepney Green": {
+      "ward_code": "E05009334",
+      "total_population": 12338,
+      "median_age": 30
+    },
+    "Weavers": {
+      "ward_code": "E05009335",
+      "total_population": 13336,
+      "median_age": 31
+    },
+    "Whitechapel": {
+      "ward_code": "E05009336",
+      "total_population": 18841,
+      "median_age": 28
+    }
+  }
+}
