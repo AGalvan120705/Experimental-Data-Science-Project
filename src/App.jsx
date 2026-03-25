@@ -4,6 +4,7 @@ import Homepage from './screens/Homepage';
 import Screen1 from './screens/Dashboard';  // your other screens
 import Screen2 from './screens/InteractiveMap';
 import Screen5 from './screens/Recommendations';
+import Screen3 from './screens/PredictiveModeling';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
 
@@ -28,6 +29,8 @@ function App() {
           <Route path="/dashboard" element={<Screen1 />} />
           <Route path="/interactiveMap" element={<Screen2 />} />
           <Route path="/recommendations" element={<Screen5 />} />
+          <Route path="/predictive-modeling" element={<Screen3 />} />
+
 
         </Routes>
       </main>
