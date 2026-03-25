@@ -1,11 +1,14 @@
 import React from 'react'
 import Dashboardstatbox from '../boxes/Dashboardstatbox';
+import PrevalenceByWardChart from '../components/graphs/PrevalenceByWardChart';
+import FiveYearTrend from '../components/graphs/FiveYearTrendGraph';
+import RiskCorrelationGraph from '../components/graphs/RiskCorrelationGraph';
 import { UserRoundPlus, HeartCrack, Brain, Hospital} from 'lucide-react';
 
 const Dashboard = () => {
   return <>
     
-    <div className="pt-20 px-8">
+    <div className="pt-12 px-8">
       <h2 className="text-3xl font-bold text-gray-800 mb-2 ">Health Dashboard</h2>
       <p className="text-gray-600 mb-4">
         Current health statistics and insight of Tower Hamlets of Type 2 diabtes indicators across the borough.
@@ -67,6 +70,23 @@ const Dashboard = () => {
         }}
       />
 
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 px-8">
+      {/* Prevalence by ward chart */}
+      <div className="w-full">
+        <PrevalenceByWardChart />
+      </div>
+
+      {/* 5 year trend chart */}
+      <div className="w-full">
+        <FiveYearTrend />
+      </div>
+    </div>
+
+    {/* Risk correlation graph */}
+    <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-6 px-8 pb-8">
+      <RiskCorrelationGraph />
     </div>
 
 

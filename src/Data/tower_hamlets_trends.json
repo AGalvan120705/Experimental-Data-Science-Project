@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-25T01:23:56.448201",
+    "source": {
+      "name": "Department of Health and Social Care Fingertips Public Health Profiles",
+      "acronym": "DHSC Fingertips",
+      "note": "Data downloaded from the Fingertips public health profiles website."
+    },
+    "area": "Tower Hamlets",
+    "area_code": "E09000030",
+    "years_included": 6
+  },
+  "trends": [
+    {
+      "period": "2019/20",
+      "year": 2019,
+      "value": 6.7
+    },
+    {
+      "period": "2020/21",
+      "year": 2020,
+      "value": 6.68
+    },
+    {
+      "period": "2021/22",
+      "year": 2021,
+      "value": 6.74
+    },
+    {
+      "period": "2022/23",
+      "year": 2022,
+      "value": 6.85
+    },
+    {
+      "period": "2023/24",
+      "year": 2023,
+      "value": 7.07
+    },
+    {
+      "period": "2024/25",
+      "year": 2024,
+      "value": 7.2
+    }
+  ]
+}
