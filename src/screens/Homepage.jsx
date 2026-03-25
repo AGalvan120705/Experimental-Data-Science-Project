@@ -15,7 +15,17 @@ const homepage = () => {
 
   return (
     <>
-    <div className="grid grid-cols-1 md:grid-cols-1 pt-20 px-8 gap-6">
+      <div className="pt-8 px-8">
+        <h2 className="text-3xl font-bold text-gray-800 mb-2 ">
+          Homepage
+        </h2>
+        <p className="text-gray-600 mb-4">
+          Overview of the health landscape of Tower Hamlets, with a focus on type 2 diabetes indicators. Explore key statistics, trends, and insights to understand the current state of health in the borough.
+        </p>
+      </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-1 pt-4 px-8 gap-6">
+      {/* What is diabetes? */}
       <div className="md:grid-cols-1 gap-6 px-6 py-4 bg-[#748CAB] rounded-xl shadow-md">
           <span className="inline-flex items-center rounded-full border border-white/30 bg-[#1a3a6c] px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
             What is Type 2 diabetes?
@@ -130,8 +140,8 @@ const homepage = () => {
         <Statbox
           data={{
             label: "Highest Risk Ward",
-            value: "Canary Wharf", //need to get update to correct value
-            comparisonText: "Risk Score: 8.5/10",
+            value: "Shadwell",
+            comparisonText: "11.8% prevalence rate",
             iconBg: "bg-red-100",
             iconColor: "text-red-700",
             icon: TrendingUp,
@@ -173,9 +183,6 @@ const homepage = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 mt-6 px-8 gap-6 pb-12">
-        {/* // has a the trend down icon... needs to get fix 
-        // //need to add button to navigate to the dashboard3
-        */}
         <Statbox
           data={{
             value: "Data Intelligence",
