@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/dashboard" element={<Screen1 />} />
-          <Route path="/interactiveMap" element={<Screen2 />} />
+          <Route path="/interactive-map" element={<Screen2 />} />
           <Route path="/recommendations" element={<Screen5 />} />
           <Route path="/predictive-modeling" element={<Screen3 />} />
 
