@@ -33,7 +33,7 @@ const Recommendations = () => {
       <div className=" px-6 max-w-full">
         <div className=" grid grid-cols-1 gap-x-2 gap-y-2 px-8 py-4 bg-linear-to-r from-[#13315c] to-blue-700 rounded-xl shadow-md">
           <Heart className="mr-2 w-8 h-8 text-amber-300 mt-5" />
-          <h2 className=" pl-10 p-4 text-2xl font-extrabold text-White">
+          <h2 className=" pl-10 p-4 text-2xl font-extrabold text-white">
             You Have the power to Reduce Your Risk
           </h2>
 
