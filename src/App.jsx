@@ -5,6 +5,7 @@ import Screen1 from './screens/Dashboard';  // your other screens
 import Screen2 from './screens/InteractiveMap';
 import Screen5 from './screens/Recommendations';
 import Screen3 from './screens/PredictiveModeling';
+import Screen4 from './screens/PersonalRiskAssessment';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/interactive-map" element={<Screen2 />} />
           <Route path="/recommendations" element={<Screen5 />} />
           <Route path="/predictive-modeling" element={<Screen3 />} />
+          <Route path="/personal-risk-tool" element={<Screen4 />} />
 
 
         </Routes>

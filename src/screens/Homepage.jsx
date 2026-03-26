@@ -208,7 +208,7 @@ const homepage = () => {
             linkText: "View Forecast Model →",
             linkColor: "text-[#4B7F52]",
             linkHoverColor: "hover:text-[#3f6b45]",
-            linkHref: "/dashboard",
+            linkHref: "/predictive-modeling",
           }}
         />
         <Statbox
@@ -222,7 +222,7 @@ const homepage = () => {
             linkText: "Open Interactive Map →",
             linkColor: "text-[#0075F2]",
             linkHoverColor: "hover:text-[#005fc2]",
-            linkHref: "/map",
+            linkHref: "/interactive-map",
           }}
         />
       </div>
