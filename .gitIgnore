@@ -24,4 +24,4 @@ yarn-error.log*
 *.swo
 
 .tailwind-cache
-.venv/ignore
+.venv/

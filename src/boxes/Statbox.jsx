@@ -1,5 +1,6 @@
 import React from 'react'
 import { TrendingUp, TrendingDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Statbox = ({ data }) => {
   const {
@@ -14,7 +15,8 @@ const Statbox = ({ data }) => {
     linkText,
     linkColor,
     linkHoverColor,
-    linkHref
+    linkHref,
+    linkOnClick
   } = data;
 
   let trendcolor = '';
@@ -28,7 +30,7 @@ const Statbox = ({ data }) => {
     TrendIcon = TrendingDown;
   }
 
-  const showFooterLink = Boolean(linkText && linkHref);
+  const showFooterLink = Boolean(linkText && (linkHref || linkOnClick));
 
   return (
     <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-md w-full flex flex-col gap-4">
@@ -55,12 +57,22 @@ const Statbox = ({ data }) => {
 
       {showFooterLink && (
         <div className="pt-1">
-          <a
-            href={linkHref}
-            className={`text-sm font-semibold transition-colors ${linkColor || 'text-blue-600'} ${linkHoverColor || 'hover:text-blue-700'}`}
-          >
-            {linkText}
-          </a>
+          {linkOnClick ? (
+            <button
+              type="button"
+              onClick={linkOnClick}
+              className={`text-sm font-semibold transition-colors ${linkColor || 'text-blue-600'} ${linkHoverColor || 'hover:text-blue-700'}`}
+            >
+              {linkText}
+            </button>
+          ) : (
+            <Link
+              to={linkHref}
+              className={`text-sm font-semibold transition-colors ${linkColor || 'text-blue-600'} ${linkHoverColor || 'hover:text-blue-700'}`}
+            >
+              {linkText}
+            </Link>
+          )}
         </div>
       )}
     </div>

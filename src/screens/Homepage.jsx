@@ -113,13 +113,14 @@ const homepage = () => {
             </h3>
           </div>
           <div className="space-y-1 mt-4">
-            <a
-              href="/personal-risk-assessment"
+            <button
+              type="button"
+              onClick={() => navigate("/personal-risk-assessment")}
               className="text-white font-semibold transition-colors hover:text-gray-200"
             >
               {" "}
               Take Assessment →{" "}
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -195,6 +196,7 @@ const homepage = () => {
             linkColor: "text-blue-700",
             linkHoverColor: "hover:text-blue-800",
             linkHref: "/dashboard",
+            linkOnClick: () => navigate("/dashboard"),
           }}
         />
         <Statbox
@@ -209,6 +211,7 @@ const homepage = () => {
             linkColor: "text-[#4B7F52]",
             linkHoverColor: "hover:text-[#3f6b45]",
             linkHref: "/predictive-modeling",
+            linkOnClick: () => navigate("/predictive-modeling"),
           }}
         />
         <Statbox
@@ -223,6 +226,7 @@ const homepage = () => {
             linkColor: "text-[#0075F2]",
             linkHoverColor: "hover:text-[#005fc2]",
             linkHref: "/interactive-map",
+            linkOnClick: () => navigate("/interactive-map"),
           }}
         />
       </div>
