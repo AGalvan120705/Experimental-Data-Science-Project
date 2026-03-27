@@ -160,10 +160,11 @@ export default function DiabetesRiskAssessment({ onAssessmentComplete }) {
                     <div className="space-y-5">
                         {Object.entries(RISK_FACTORS).map(([field, config]) => (
                             <div key={field}>
-                                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                <label htmlFor={`risk-${field}`} className="block text-sm font-medium text-gray-700 mb-1.5">
                                     {config.label}
                                 </label>
                                 <select
+                                    id={`risk-${field}`}
                                     value={values[field]}
                                     onChange={(e) => handleChange(field, e.target.value)}
                                     className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none cursor-pointer"

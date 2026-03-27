@@ -8,7 +8,7 @@ const Navbar = ({expanded, onHoverChange, navbarLocked, onToggleNavbar}) => {
     { label: 'Dashboard', icon: <LayoutDashboard size={20} />, path: '/dashboard' },
     { label: 'Interactive Map', icon: <Map size={20} />, path: '/interactive-map' },
     { label: 'Predictive Model', icon: <TrendingUp size={20} />, path: '/predictive-modeling' },
-    { label: 'Personal Risk tool', icon: <User size={20} />, path: '/personal-risk-tool' },
+    { label: 'Personal Risk tool', icon: <User size={20} />, path: '/personal-risk-assessment' },
     { label: 'Recommendations', icon: <FileText size={20} />, path: '/recommendations' },
   ];
   

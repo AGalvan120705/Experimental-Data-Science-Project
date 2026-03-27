@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:py": "python3 -m pytest src/Data/scripts/tests -q",
+    "test:py:coverage": "python3 -m pytest src/Data/scripts/tests --cov=src/Data/scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=html:htmlcov_py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
@@ -20,13 +25,20 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "@vitest/coverage-v8": "^4.1.2",
+    "@vitest/ui": "^4.1.2",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "vite": "^7.3.1"
+    "jsdom": "^29.0.1",
+    "vite": "^7.3.1",
+    "vitest": "^4.1.2"
   }
 }

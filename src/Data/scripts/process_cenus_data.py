@@ -6,25 +6,10 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR.parent
 
-input_candidates = sorted(DATA_DIR.glob('TS007-2021-3-filtered-*.csv'))
-if not input_candidates:
-    raise FileNotFoundError(
-        f'Could not find TS007 census CSV in {DATA_DIR}'
-    )
-
-INPUT_FILE = input_candidates[-1]
-OUTPUT_FILE = DATA_DIR / 'tower_hamlets_ward_age_pop.json'
-
-# load the census age data
-df = pd.read_csv(INPUT_FILE)
-
 # tower hamlets ward codes (E05009317 to E05009336)
-th_codes = [f'E0500931{i}' for i in range(7, 10)] + \
+TH_CODES = [f'E0500931{i}' for i in range(7, 10)] + \
            [f'E0500932{i}' for i in range(0, 10)] + \
            [f'E0500933{i}' for i in range(0, 7)]
-
-# filter to tower hamlets wards only
-th_df = df[df['Electoral wards and divisions Code'].isin(th_codes)]
 
 
 def calculate_stats(ward_data):
@@ -47,24 +32,53 @@ def calculate_stats(ward_data):
     return total_pop, median_age
 
 
-# process each ward
-results = {"wards": {}}
+def find_latest_input_file(data_dir):
+    data_dir = Path(data_dir)
+    input_candidates = sorted(data_dir.glob('TS007-2021-3-filtered-*.csv'))
+    if not input_candidates:
+        raise FileNotFoundError(
+            f'Could not find TS007 census CSV in {data_dir}'
+        )
+    return input_candidates[-1]
 
-for code in sorted(th_codes):
-    ward_data = th_df[th_df['Electoral wards and divisions Code'] == code]
-    if len(ward_data) > 0:
-        ward_name = ward_data['Electoral wards and divisions'].iloc[0]
-        total_pop, median_age = calculate_stats(ward_data)
 
-        results["wards"][ward_name] = {
-            "ward_code": code,
-            "total_population": int(total_pop),
-            "median_age": int(median_age)
-        }
+def process_census_data(input_file):
+    df = pd.read_csv(input_file)
+    th_df = df[df['Electoral wards and divisions Code'].isin(TH_CODES)]
 
-# output json file
-with open(OUTPUT_FILE, 'w') as f:
-    json.dump(results, f, indent=2)
+    results = {"wards": {}}
+    for code in sorted(TH_CODES):
+        ward_data = th_df[th_df['Electoral wards and divisions Code'] == code]
+        if len(ward_data) > 0:
+            ward_name = ward_data['Electoral wards and divisions'].iloc[0]
+            total_pop, median_age = calculate_stats(ward_data)
 
-print(f"processed {len(results['wards'])} wards")
-print(f"output saved to {OUTPUT_FILE}")
+            results["wards"][ward_name] = {
+                "ward_code": code,
+                "total_population": int(total_pop),
+                "median_age": int(median_age)
+            }
+
+    return results
+
+
+def save_results(results, output_file):
+    output_path = Path(output_file)
+    with open(output_path, 'w') as f:
+        json.dump(results, f, indent=2)
+
+
+def main(data_dir=None, output_file=None):
+    effective_data_dir = Path(data_dir) if data_dir is not None else DATA_DIR
+    input_file = find_latest_input_file(effective_data_dir)
+    effective_output_file = Path(output_file) if output_file is not None else effective_data_dir / 'tower_hamlets_ward_age_pop.json'
+
+    results = process_census_data(input_file)
+    save_results(results, effective_output_file)
+
+    print(f"processed {len(results['wards'])} wards")
+    print(f"output saved to {effective_output_file}")
+
+
+if __name__ == '__main__':
+    main()

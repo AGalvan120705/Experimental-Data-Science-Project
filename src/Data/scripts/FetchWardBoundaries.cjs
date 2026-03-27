@@ -3,8 +3,6 @@
 // Run with: node src/Data/scripts/FetchWardBoundaries.cjs
 
 const fs = require('fs').promises;
-const { meta } = require('eslint-plugin-react-hooks');
-const path = require('path');
 
 const TowerHamletCode= 'E09000030';
 const GEOJSON_URL = `https://findthatpostcode.uk/areas/${TowerHamletCode}/children/ward.geojson`;
@@ -20,29 +18,37 @@ const SimplifyWards = ({features}) => features.filter(ActiveWards).map(({ proper
     geometry,
 }));
 
-(async () => {
+const buildOutputData = (simplifiedData, fetchedAt = new Date().toISOString()) => ({
+    type: 'FeatureCollection',
+    metaData: {
+        source: 'ONS GeoJSON via FindThatPostcode API',
+        license: 'Open Government Licence v3.0',
+        area: 'Tower Hamlets',
+        areaCode: TowerHamletCode,
+        fetchedAt,
+        wardCount: simplifiedData.length,
+    },
+    features: simplifiedData,
+});
+
+async function fetchAndSaveWardBoundaries(fetchImpl = fetch, writeFileImpl = fs.writeFile) {
+    const response = await fetchImpl(GEOJSON_URL);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch data: ${response.statusText}`);
+    }
+
+    const geojsonData = await response.json();
+    const simplifiedData = SimplifyWards(geojsonData);
+    const outputData = buildOutputData(simplifiedData);
+
+    await writeFileImpl(OutputFilePath, JSON.stringify(outputData, null, 2));
+
+    return { outputData, simplifiedData };
+}
+
+async function main() {
     try {
-        const response = await fetch(GEOJSON_URL);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.statusText}`);
-        }
-        const geojsonData = await response.json();
-        const simplifiedData = SimplifyWards(geojsonData);
-
-        const outputData = {
-            type: 'FeatureCollection',
-            metaData: {
-                source: 'ONS GeoJSON via FindThatPostcode API',
-                license: 'Open Government Licence v3.0',
-                area: 'Tower Hamlets',
-                areaCode: TowerHamletCode,
-                fetchedAt: new Date().toISOString(),
-                wardCount: simplifiedData.length,
-            },
-            features: simplifiedData,
-        };
-
-        await fs.writeFile(OutputFilePath, JSON.stringify(outputData, null, 2));
+        const { simplifiedData } = await fetchAndSaveWardBoundaries();
         console.log(`Ward boundaries saved to ${OutputFilePath}`);
         simplifiedData.sort((a, b) => a.properties.name.localeCompare(b.properties.name)).forEach(f => {
             console.log(` - ${f.properties.name} (${f.properties.code})`)
@@ -51,4 +57,15 @@ const SimplifyWards = ({features}) => features.filter(ActiveWards).map(({ proper
         console.error('Error fetching or processing data:', error);
         process.exit(1);
     }
-})();
+}
+
+module.exports = {
+    ActiveWards,
+    SimplifyWards,
+    buildOutputData,
+    fetchAndSaveWardBoundaries,
+};
+
+if (require.main === module) {
+    main();
+}
