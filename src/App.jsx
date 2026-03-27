@@ -31,7 +31,7 @@ function App() {
           <Route path="/interactive-map" element={<Screen2 />} />
           <Route path="/recommendations" element={<Screen5 />} />
           <Route path="/predictive-modeling" element={<Screen3 />} />
-          <Route path="/personal-risk-tool" element={<Screen4 />} />
+          <Route path="/personal-risk-assessment" element={<Screen4 />} />
 
 
         </Routes>
