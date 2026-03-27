@@ -311,7 +311,7 @@ const Recommendations = () => {
           </p>
 
           <button
-            onClick={() => navigate("/PersonalRiskAssessment")}
+            onClick={() => navigate("/personal-risk-assessment")}
             className="px-6 py-3 bg-white text-[#519872] font-semibold rounded-lg transition-colors hover:bg-gray-200"
           >
             Take the Personal Risk Assessment

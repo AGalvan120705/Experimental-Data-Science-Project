@@ -26,7 +26,7 @@ const homepage = () => {
 
     <div className="grid grid-cols-1 md:grid-cols-1 pt-4 px-8 gap-6">
       {/* What is diabetes? */}
-      <div className="md:grid-cols-1 gap-6 px-6 py-4 bg-[#748CAB] rounded-xl shadow-md">
+      <div className="md:grid-cols-1 gap-6 px-6 py-4 bg-[#2f4f6f] rounded-xl shadow-md">
           <span className="inline-flex items-center rounded-full border border-white/30 bg-[#1a3a6c] px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
             What is Type 2 diabetes?
           </span>
@@ -71,7 +71,7 @@ const homepage = () => {
               Explore Dashboard →
             </button>
             <button
-              onClick={() => navigate("/map")}
+              onClick={() => navigate("/interactive-map")}
               className="inline-flex items-center rounded-xl border border-white/30 bg-gray-500/25 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm"
             >
               View Borough Map
@@ -114,7 +114,7 @@ const homepage = () => {
           </div>
           <div className="space-y-1 mt-4">
             <a
-              href="/assessment"
+              href="/personal-risk-assessment"
               className="text-white font-semibold transition-colors hover:text-gray-200"
             >
               {" "}
