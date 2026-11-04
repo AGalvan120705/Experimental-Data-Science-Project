@@ -11,6 +11,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
+    "data:build": "python3 src/Data/scripts/build_ward_insights.py",
     "test:py": "python3 -m pytest src/Data/scripts/tests -q",
     "test:py:coverage": "python3 -m pytest src/Data/scripts/tests --cov=src/Data/scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=html:htmlcov_py"
   },

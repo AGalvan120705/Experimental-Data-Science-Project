@@ -52,6 +52,21 @@ python3 -m pip install --upgrade pip
 pip install pytest pytest-cov pandas openpyxl
 ```
 
+## Build the canonical ward insight data
+
+The ward insight builder combines the existing processed health, deprivation,
+and Census JSON files into one API-ready dataset:
+
+```bash
+npm run data:build
+```
+
+The generated file is `src/Data/ward_insights.json`. It contains all 20 wards,
+canonical ward codes and names, source and period metadata, borough comparisons,
+and explicit `unavailable` values where GP-associated health data is missing.
+Diabetes and obesity figures are estimates associated with GP practices mapped
+to wards; they are not direct measurements of every resident in a ward.
+
 ## Testing
 
 
