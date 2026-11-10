@@ -49,7 +49,7 @@ source .venv/bin/activate
 
 # Install Python dependencies
 python3 -m pip install --upgrade pip
-pip install pytest pytest-cov pandas openpyxl
+pip install -r requirements.txt
 ```
 
 ## Build the canonical ward insight data
@@ -66,6 +66,35 @@ canonical ward codes and names, source and period metadata, borough comparisons,
 and explicit `unavailable` values where GP-associated health data is missing.
 Diabetes and obesity figures are estimates associated with GP practices mapped
 to wards; they are not direct measurements of every resident in a ward.
+
+## Ward Insights API
+
+Start the FastAPI development server after building the canonical data:
+
+```bash
+npm run data:build
+npm run api:dev
+```
+
+The API runs at `http://localhost:8000`. Interactive OpenAPI documentation is
+available in Swagger UI at `http://localhost:8000/docs`, with ReDoc at
+`http://localhost:8000/redoc` and the raw schema at
+`http://localhost:8000/openapi.json`.
+
+Copy `.env.example` to `.env` when configuring local environment values. Set
+`CORS_ORIGINS` to a comma-separated list when the frontend runs on more than
+one origin.
+
+Available endpoints:
+
+- `GET /api/health`
+- `GET /api/wards`
+- `GET /api/wards/{ward_code}`
+- `POST /api/wards/{ward_code}/summary`
+
+The summary endpoint currently uses a deterministic, data-grounded fallback.
+An OpenAI provider can be added behind the existing provider interface without
+changing the public response schema.
 
 ## Testing
 
