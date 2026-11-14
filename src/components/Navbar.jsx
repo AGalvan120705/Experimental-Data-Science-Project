@@ -1,12 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import {Menu, Home, LayoutDashboard, Map, User, FileText, TrendingUp} from 'lucide-react';
+import {Menu, Home, LayoutDashboard, Map, User, FileText, TrendingUp, Sparkles} from 'lucide-react';
 
 const Navbar = ({expanded, onHoverChange, navbarLocked, onToggleNavbar}) => {
   const navItems = [
     { label: 'Overview', icon: <Home size={20} />, path: '/' },
     { label: 'Dashboard', icon: <LayoutDashboard size={20} />, path: '/dashboard' },
     { label: 'Interactive Map', icon: <Map size={20} />, path: '/interactive-map' },
+    { label: 'Ward Insights', icon: <Sparkles size={20} />, path: '/ward-insights' },
     { label: 'Predictive Model', icon: <TrendingUp size={20} />, path: '/predictive-modeling' },
     { label: 'Personal Risk tool', icon: <User size={20} />, path: '/personal-risk-assessment' },
     { label: 'Recommendations', icon: <FileText size={20} />, path: '/recommendations' },
