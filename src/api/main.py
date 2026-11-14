@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import os
+import time
+import logging
 from functools import lru_cache
+from pathlib import Path as FilePath
 
 from fastapi import Depends, FastAPI, HTTPException, Path, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,13 +19,21 @@ from src.api.models import (
     WardSummaryResponse,
 )
 from src.api.repository import WardNotFoundError, WardRepository
-from src.api.summary import DeterministicSummaryProvider, SummaryProvider
+from src.api.summary import (
+    DeterministicSummaryProvider,
+    GeminiSummaryProvider,
+    SummaryProvider,
+)
+from src.api.summary_cache import SummaryCache
 
 
 API_VERSION = "0.1.0"
 WARD_CODE_DESCRIPTION = "ONS electoral ward code, for example E05009317."
+logger = logging.getLogger(__name__)
 
-load_dotenv()
+# In local development, a populated project .env must win over an inherited
+# empty shell variable; otherwise the API silently selects the fallback.
+load_dotenv(override=True)
 
 OPENAPI_TAGS = [
     {
@@ -36,9 +47,8 @@ OPENAPI_TAGS = [
     {
         "name": "summaries",
         "description": (
-            "Grounded plain-English summaries. The current provider is a safe "
-            "deterministic template; an OpenAI provider can be added behind the "
-            "same response contract."
+            "Grounded plain-English summaries. When GEMINI_API_KEY is configured, "
+            "one validated result per ward is generated and cached each UTC day."
         ),
     },
 ]
@@ -51,7 +61,30 @@ def get_repository() -> WardRepository:
 
 @lru_cache(maxsize=1)
 def get_summary_provider() -> SummaryProvider:
+    api_key = os.getenv("GEMINI_API_KEY")
+    if api_key:
+        try:
+            provider = GeminiSummaryProvider(api_key)
+            logger.info("Ward summary provider configured: Gemini (%s)", provider.model)
+            return provider
+        except ImportError:
+            # A deployment without the optional SDK must still return a safe
+            # response instead of making the endpoint unavailable.
+            logger.warning("Gemini SDK is unavailable; using deterministic summaries.")
+            return DeterministicSummaryProvider()
+    logger.warning("GEMINI_API_KEY is not configured; using deterministic summaries.")
     return DeterministicSummaryProvider()
+
+
+@lru_cache(maxsize=1)
+def get_summary_cache() -> SummaryCache:
+    configured_path = os.getenv("WARD_SUMMARY_CACHE_DB")
+    path = (
+        FilePath(configured_path)
+        if configured_path
+        else FilePath(__file__).resolve().parents[1] / "Data" / "ward_summary_cache.sqlite3"
+    )
+    return SummaryCache(path)
 
 
 def _cors_origins() -> list[str]:
@@ -163,6 +196,7 @@ def create_app() -> FastAPI:
         ward_code: str = Path(description=WARD_CODE_DESCRIPTION),
         repository: WardRepository = Depends(get_repository),
         provider: SummaryProvider = Depends(get_summary_provider),
+        cache: SummaryCache = Depends(get_summary_cache),
     ) -> WardSummaryResponse:
         try:
             ward = repository.get_ward(ward_code)
@@ -171,7 +205,42 @@ def create_app() -> FastAPI:
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Ward '{ward_code}' was not found.",
             ) from error
-        return provider.summarise(ward, repository.dataset.borough_benchmarks)
+        dataset_version = repository.dataset.metadata.schema_version
+        cache_scope = f"{dataset_version}:{getattr(provider, 'cache_key', 'unknown-provider')}"
+        started = time.perf_counter()
+        cached_summary = cache.get(ward_code, cache_scope)
+        # Older releases cached fallback templates. Never let one masquerade as
+        # an AI result or prevent a later successful Gemini attempt.
+        if cached_summary and cached_summary.model_metadata.used_fallback:
+            cached_summary = None
+        if cached_summary:
+            cache.log(
+                cached_summary, dataset_version, int((time.perf_counter() - started) * 1000),
+                "cached", True,
+            )
+            return cached_summary
+
+        try:
+            summary = provider.summarise(ward, repository.dataset.borough_benchmarks)
+            validation_result = "valid"
+        except Exception:
+            logger.exception(
+                "Gemini summary failed for ward %s; using the deterministic fallback.",
+                ward_code,
+            )
+            summary = DeterministicSummaryProvider().summarise(
+                ward, repository.dataset.borough_benchmarks
+            )
+            validation_result = "fallback"
+        # Do not cache a failed provider attempt. It would hide a corrected key,
+        # model name, or transient Gemini outage for the rest of the day.
+        if not summary.model_metadata.used_fallback:
+            cache.put(summary, cache_scope)
+        cache.log(
+            summary, dataset_version, int((time.perf_counter() - started) * 1000),
+            validation_result, False,
+        )
+        return summary
 
     return app
 

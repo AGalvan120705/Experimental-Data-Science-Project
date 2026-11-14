@@ -1,6 +1,13 @@
 from fastapi.testclient import TestClient
 
 from src.api.main import app
+from src.api.repository import WardRepository
+from src.api.summary import (
+    DeterministicSummaryProvider,
+    GeminiSummaryProvider,
+    _health_data_gaps,
+)
+from src.api.summary_cache import SummaryCache
 
 
 client = TestClient(app)
@@ -59,8 +66,54 @@ def test_summary_is_grounded_and_flags_missing_data():
     assert complete.json()["ward_name"] == "Bethnal Green East"
     assert complete.json()["model_metadata"]["provider"] == "deterministic"
     assert "1.89 percentage points below" in complete.json()["comparisons"][0]
+    assert complete.json()["guidance_card_ids"] == [
+        "nice-prevention-ph38",
+        "nhs-type-2-treatment",
+        "nhs-diabetes-prevention-programme",
+    ]
 
     assert missing.status_code == 200
     assert missing.json()["ward_name"] == "Bethnal Green West"
     assert len(missing.json()["data_gaps"]) == 2
     assert "unavailable" in missing.json()["comparisons"][0]
+
+
+def test_daily_summary_cache_returns_a_saved_response(tmp_path):
+    repository = WardRepository()
+    ward = repository.get_ward("E05009317")
+    summary = DeterministicSummaryProvider().summarise(
+        ward, repository.dataset.borough_benchmarks
+    )
+    cache = SummaryCache(tmp_path / "summaries.sqlite3")
+
+    assert cache.get(ward.ward_code, "1.0.0") is None
+    cache.put(summary, "1.0.0")
+    cached = cache.get(ward.ward_code, "1.0.0")
+
+    assert cached is not None
+    assert cached.model_dump() == summary.model_dump()
+
+
+def test_gemini_source_payload_uses_metric_values_without_calling_the_api():
+    repository = WardRepository()
+    ward = repository.get_ward("E05009317")
+
+    payload = GeminiSummaryProvider._source_payload(
+        ward, repository.dataset.borough_benchmarks
+    )
+
+    assert payload["metrics"]["diabetes_prevalence"] == {
+        "value": 5.31,
+        "unit": "percent",
+        "period": "2024-25",
+    }
+
+
+def test_only_source_confirmed_health_gaps_are_included():
+    repository = WardRepository()
+
+    assert _health_data_gaps(repository.get_ward("E05009317")) == []
+    assert _health_data_gaps(repository.get_ward("E05009331")) == [
+        "GP-practice-associated diabetes prevalence is unavailable.",
+        "GP-practice-associated obesity prevalence is unavailable.",
+    ]
