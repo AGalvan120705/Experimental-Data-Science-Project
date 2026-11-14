@@ -82,8 +82,9 @@ available in Swagger UI at `http://localhost:8000/docs`, with ReDoc at
 `http://localhost:8000/openapi.json`.
 
 Copy `.env.example` to `.env` when configuring local environment values. Set
-`CORS_ORIGINS` to a comma-separated list when the frontend runs on more than
-one origin.
+`GEMINI_API_KEY` to enable Gemini summaries (the key is read only by FastAPI,
+never by Vite). Set `CORS_ORIGINS` to a comma-separated list when the frontend
+runs on more than one origin.
 
 Available endpoints:
 
@@ -92,9 +93,17 @@ Available endpoints:
 - `GET /api/wards/{ward_code}`
 - `POST /api/wards/{ward_code}/summary`
 
-The summary endpoint currently uses a deterministic, data-grounded fallback.
-An OpenAI provider can be added behind the existing provider interface without
-changing the public response schema.
+With an API key, the summary endpoint uses Gemini with structured JSON, a
+low-temperature prompt, number allow-list validation and one retry. Every
+result is cached in SQLite by ward, dataset version and UTC day, so repeated
+clicks make no further AI requests. If no key is configured, or generation or
+validation fails, it returns a deterministic, data-grounded fallback. The cache
+and audit log database is excluded from Git; set `WARD_SUMMARY_CACHE_DB` if a
+different persistent location is needed in production.
+
+The React interface is available at `/ward-insights`. It reads the API URL from
+`VITE_API_URL`, displays the exact source figures used for each briefing, and
+keeps general NHS/NICE guidance separate from ward-level statistical comparisons.
 
 ## Testing
 
