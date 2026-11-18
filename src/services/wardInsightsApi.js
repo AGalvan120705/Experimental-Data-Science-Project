@@ -22,6 +22,11 @@ async function request(path, options = {}) {
 
 export const listWards = () => request('/api/wards');
 
+// Intentionally fire this as soon as the frontend loads. On Render's free
+// tier, this begins a cold start while the visitor is still on the landing
+// page, instead of making the Ward Insights page wait for it.
+export const checkApiHealth = () => request('/api/health');
+
 export const getWard = (wardCode, { signal } = {}) =>
   request(`/api/wards/${encodeURIComponent(wardCode)}`, { signal });
 
