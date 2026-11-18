@@ -1,0 +1,1341 @@
+{
+  "metadata": {
+    "schema_version": "1.0.0",
+    "generated_at": "2026-11-17T22:51:32.477464+00:00",
+    "area": "Tower Hamlets",
+    "ward_count": 20,
+    "methodology_note": "Diabetes and obesity values are estimates associated with GP practices mapped to wards, not direct measurements of all ward residents.",
+    "sources": {
+      "nhs_qof_2024_25": {
+        "name": "NHS Digital QOF Practice Level Data",
+        "period": "2024-25"
+      },
+      "census_ts011_2021": {
+        "name": "Census 2021 Household Deprivation (TS011)",
+        "period": "2021"
+      },
+      "census_ts007_2021": {
+        "name": "Census 2021 Age (TS007)",
+        "period": "2021"
+      }
+    },
+    "warnings": [
+      {
+        "code": "health_data_unavailable",
+        "wards": [
+          "Bethnal Green West",
+          "St Dunstan's"
+        ],
+        "message": "GP-associated diabetes and obesity values are unavailable for these wards and have not been estimated."
+      }
+    ]
+  },
+  "borough_benchmarks": {
+    "diabetes_prevalence": 7.2,
+    "obesity_prevalence": 10.28,
+    "mean_ward_deprivation_index": 7.05,
+    "mean_ward_population": 15516.9
+  },
+  "wards": [
+    {
+      "ward_code": "E05009317",
+      "ward_name": "Bethnal Green East",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 5.31,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 7.98,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 89.1,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 60.2,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 21089,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -1.89,
+        "diabetes_rank": 14,
+        "obesity_vs_borough_percentage_points": -2.3,
+        "obesity_rank": 15,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": 5572.1,
+        "population_rank": 4
+      }
+    },
+    {
+      "ward_code": "E05009331",
+      "ward_name": "Bethnal Green West",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": null,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "unavailable",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": null,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "unavailable",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 85.7,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 57.0,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 19780,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 30,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": null,
+        "diabetes_rank": null,
+        "obesity_vs_borough_percentage_points": null,
+        "obesity_rank": null,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": 4263.1,
+        "population_rank": 5
+      }
+    },
+    {
+      "ward_code": "E05009318",
+      "ward_name": "Blackwall & Cubitt Town",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 4.9,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 9.1,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 3,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 33.9,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 44.3,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 21434,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 30,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -2.3,
+        "diabetes_rank": 16,
+        "obesity_vs_borough_percentage_points": -1.18,
+        "obesity_rank": 14,
+        "deprivation_vs_ward_average": -4.05,
+        "deprivation_rank": 17,
+        "population_vs_ward_average": 5917.1,
+        "population_rank": 3
+      }
+    },
+    {
+      "ward_code": "E05009319",
+      "ward_name": "Bow East",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 7.34,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 10.51,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 7,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 65.8,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 49.8,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 19524,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 31,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 0.14,
+        "diabetes_rank": 10,
+        "obesity_vs_borough_percentage_points": 0.23,
+        "obesity_rank": 9,
+        "deprivation_vs_ward_average": -0.05,
+        "deprivation_rank": 14,
+        "population_vs_ward_average": 4007.1,
+        "population_rank": 6
+      }
+    },
+    {
+      "ward_code": "E05009320",
+      "ward_name": "Bow West",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 8.15,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 13.19,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 8,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 76.8,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 54.8,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 13717,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 32,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 0.95,
+        "diabetes_rank": 6,
+        "obesity_vs_borough_percentage_points": 2.91,
+        "obesity_rank": 5,
+        "deprivation_vs_ward_average": 0.95,
+        "deprivation_rank": 9,
+        "population_vs_ward_average": -1799.9,
+        "population_rank": 12
+      }
+    },
+    {
+      "ward_code": "E05009321",
+      "ward_name": "Bromley North",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 6.89,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 9.97,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 90.1,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 59.6,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 11701,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 31,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -0.31,
+        "diabetes_rank": 13,
+        "obesity_vs_borough_percentage_points": -0.31,
+        "obesity_rank": 11,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": -3815.9,
+        "population_rank": 18
+      }
+    },
+    {
+      "ward_code": "E05009322",
+      "ward_name": "Bromley South",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 8.39,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 10.39,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 8,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 85.0,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 57.4,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 13982,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 1.19,
+        "diabetes_rank": 4,
+        "obesity_vs_borough_percentage_points": 0.11,
+        "obesity_rank": 10,
+        "deprivation_vs_ward_average": 0.95,
+        "deprivation_rank": 9,
+        "population_vs_ward_average": -1534.9,
+        "population_rank": 11
+      }
+    },
+    {
+      "ward_code": "E05009323",
+      "ward_name": "Canary Wharf",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 3.68,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 7.25,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 2,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 23.5,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 41.6,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 17983,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 30,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -3.52,
+        "diabetes_rank": 18,
+        "obesity_vs_borough_percentage_points": -3.03,
+        "obesity_rank": 18,
+        "deprivation_vs_ward_average": -5.05,
+        "deprivation_rank": 19,
+        "population_vs_ward_average": 2466.1,
+        "population_rank": 8
+      }
+    },
+    {
+      "ward_code": "E05009324",
+      "ward_name": "Island Gardens",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 5.01,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 7.98,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 5,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 53.2,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 49.3,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 15313,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 32,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -2.19,
+        "diabetes_rank": 15,
+        "obesity_vs_borough_percentage_points": -2.3,
+        "obesity_rank": 15,
+        "deprivation_vs_ward_average": -2.05,
+        "deprivation_rank": 16,
+        "population_vs_ward_average": -203.9,
+        "population_rank": 9
+      }
+    },
+    {
+      "ward_code": "E05009325",
+      "ward_name": "Lansbury",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 7.6,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 13.94,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 90.4,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 60.1,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 21699,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 0.4,
+        "diabetes_rank": 9,
+        "obesity_vs_borough_percentage_points": 3.66,
+        "obesity_rank": 3,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": 6182.1,
+        "population_rank": 1
+      }
+    },
+    {
+      "ward_code": "E05009326",
+      "ward_name": "Limehouse",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 8.38,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 14.03,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 3,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 28.2,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 42.1,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 6557,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 33,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 1.18,
+        "diabetes_rank": 5,
+        "obesity_vs_borough_percentage_points": 3.75,
+        "obesity_rank": 2,
+        "deprivation_vs_ward_average": -4.05,
+        "deprivation_rank": 17,
+        "population_vs_ward_average": -8959.9,
+        "population_rank": 20
+      }
+    },
+    {
+      "ward_code": "E05009327",
+      "ward_name": "Mile End",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 6.92,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 11.93,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 8,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 83.3,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 57.1,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 21652,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -0.28,
+        "diabetes_rank": 12,
+        "obesity_vs_borough_percentage_points": 1.65,
+        "obesity_rank": 6,
+        "deprivation_vs_ward_average": 0.95,
+        "deprivation_rank": 9,
+        "population_vs_ward_average": 6135.1,
+        "population_rank": 2
+      }
+    },
+    {
+      "ward_code": "E05009328",
+      "ward_name": "Poplar",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 9.91,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 15.01,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 92.1,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 62.3,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 8073,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 2.71,
+        "diabetes_rank": 3,
+        "obesity_vs_borough_percentage_points": 4.73,
+        "obesity_rank": 1,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": -7443.9,
+        "population_rank": 19
+      }
+    },
+    {
+      "ward_code": "E05009332",
+      "ward_name": "Shadwell",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 11.89,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 13.78,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 10,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 96.3,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 65.4,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 13279,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 30,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 4.69,
+        "diabetes_rank": 1,
+        "obesity_vs_borough_percentage_points": 3.5,
+        "obesity_rank": 4,
+        "deprivation_vs_ward_average": 2.95,
+        "deprivation_rank": 1,
+        "population_vs_ward_average": -2237.9,
+        "population_rank": 15
+      }
+    },
+    {
+      "ward_code": "E05009333",
+      "ward_name": "Spitalfields & Banglatown",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 7.99,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 9.56,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 8,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 78.0,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 54.4,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 13331,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 0.79,
+        "diabetes_rank": 7,
+        "obesity_vs_borough_percentage_points": -0.72,
+        "obesity_rank": 12,
+        "deprivation_vs_ward_average": 0.95,
+        "deprivation_rank": 9,
+        "population_vs_ward_average": -2185.9,
+        "population_rank": 14
+      }
+    },
+    {
+      "ward_code": "E05009329",
+      "ward_name": "St Dunstan's",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": null,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "unavailable",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": null,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "unavailable",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 9,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 94.7,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 62.6,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 14748,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 29,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": null,
+        "diabetes_rank": null,
+        "obesity_vs_borough_percentage_points": null,
+        "obesity_rank": null,
+        "deprivation_vs_ward_average": 1.95,
+        "deprivation_rank": 3,
+        "population_vs_ward_average": -768.9,
+        "population_rank": 10
+      }
+    },
+    {
+      "ward_code": "E05009330",
+      "ward_name": "St Katharine's & Wapping",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 4.54,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 7.72,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 1,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 12.1,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 39.2,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 11961,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 33,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -2.66,
+        "diabetes_rank": 17,
+        "obesity_vs_borough_percentage_points": -2.56,
+        "obesity_rank": 17,
+        "deprivation_vs_ward_average": -6.05,
+        "deprivation_rank": 20,
+        "population_vs_ward_average": -3555.9,
+        "population_rank": 17
+      }
+    },
+    {
+      "ward_code": "E05009334",
+      "ward_name": "Stepney Green",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 10.4,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 11.65,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 10,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 97.4,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 67.7,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 12338,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 30,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 3.2,
+        "diabetes_rank": 2,
+        "obesity_vs_borough_percentage_points": 1.37,
+        "obesity_rank": 7,
+        "deprivation_vs_ward_average": 2.95,
+        "deprivation_rank": 1,
+        "population_vs_ward_average": -3178.9,
+        "population_rank": 16
+      }
+    },
+    {
+      "ward_code": "E05009335",
+      "ward_name": "Weavers",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 7.99,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 10.62,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 8,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 79.1,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 54.4,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 13336,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 31,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": 0.79,
+        "diabetes_rank": 7,
+        "obesity_vs_borough_percentage_points": 0.34,
+        "obesity_rank": 8,
+        "deprivation_vs_ward_average": 0.95,
+        "deprivation_rank": 9,
+        "population_vs_ward_average": -2180.9,
+        "population_rank": 13
+      }
+    },
+    {
+      "ward_code": "E05009336",
+      "ward_name": "Whitechapel",
+      "metrics": {
+        "diabetes_prevalence": {
+          "value": 7.16,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "obesity_prevalence": {
+          "value": 9.35,
+          "unit": "percent",
+          "period": "2024-25",
+          "status": "available",
+          "source_id": "nhs_qof_2024_25"
+        },
+        "deprivation_index": {
+          "value": 6,
+          "unit": "index_1_to_10",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "national_deprivation_percentile": {
+          "value": 56.3,
+          "unit": "percentile",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "households_deprived": {
+          "value": 50.1,
+          "unit": "percent",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts011_2021"
+        },
+        "population": {
+          "value": 18841,
+          "unit": "people",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        },
+        "median_age": {
+          "value": 28,
+          "unit": "years",
+          "period": "2021",
+          "status": "available",
+          "source_id": "census_ts007_2021"
+        }
+      },
+      "comparisons": {
+        "diabetes_vs_borough_percentage_points": -0.04,
+        "diabetes_rank": 11,
+        "obesity_vs_borough_percentage_points": -0.93,
+        "obesity_rank": 13,
+        "deprivation_vs_ward_average": -1.05,
+        "deprivation_rank": 15,
+        "population_vs_ward_average": 3324.1,
+        "population_rank": 7
+      }
+    }
+  ]
+}

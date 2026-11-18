@@ -6,14 +6,22 @@ import Screen2 from './screens/InteractiveMap';
 import Screen5 from './screens/Recommendations';
 import Screen3 from './screens/PredictiveModeling';
 import Screen4 from './screens/PersonalRiskAssessment';
+import WardInsights from './screens/WardInsights';
 import Navbar from './components/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { checkApiHealth } from './services/wardInsightsApi';
 
 function App() {
   const [navbarHovered, setNavbarHovered] = useState(false);
   const [navbarLocked, setNavbarLocked] = useState(false);
   const navbarExpanded = navbarHovered || navbarLocked;
   const navbarWidth = navbarExpanded ? 280 : 80;
+
+  useEffect(() => {
+    // This is deliberately non-blocking: it warms the API without delaying
+    // the landing page when the API is asleep or temporarily unavailable.
+    void checkApiHealth().catch(() => {});
+  }, []);
 
   return (
     <Router>
@@ -32,6 +40,7 @@ function App() {
           <Route path="/recommendations" element={<Screen5 />} />
           <Route path="/predictive-modeling" element={<Screen3 />} />
           <Route path="/personal-risk-assessment" element={<Screen4 />} />
+          <Route path="/ward-insights" element={<WardInsights />} />
 
 
         </Routes>

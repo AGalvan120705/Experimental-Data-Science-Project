@@ -19,6 +19,7 @@ describe('Navbar integration', () => {
         expect(screen.getByRole('link', { name: /overview/i })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /dashboard/i })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /interactive map/i })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /ward insights/i })).toBeInTheDocument();
     });
 
     it('calls callbacks for lock and hover interactions', () => {

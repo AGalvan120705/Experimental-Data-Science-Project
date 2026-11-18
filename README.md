@@ -8,6 +8,8 @@ This project is an data science project that focuses on bringing awareness and k
 
 **Link to Project:**
 
+https://experimental-data-science-project.onrender.com
+
 
 ![1774580373651](image/README/1774580373651.png)
 
@@ -47,8 +49,61 @@ source .venv/bin/activate
 
 # Install Python dependencies
 python3 -m pip install --upgrade pip
-pip install pytest pytest-cov pandas openpyxl
+pip install -r requirements.txt
 ```
+
+## Build the canonical ward insight data
+
+The ward insight builder combines the existing processed health, deprivation,
+and Census JSON files into one API-ready dataset:
+
+```bash
+npm run data:build
+```
+
+The generated file is `src/Data/ward_insights.json`. It contains all 20 wards,
+canonical ward codes and names, source and period metadata, borough comparisons,
+and explicit `unavailable` values where GP-associated health data is missing.
+Diabetes and obesity figures are estimates associated with GP practices mapped
+to wards; they are not direct measurements of every resident in a ward.
+
+## Ward Insights API
+
+Start the FastAPI development server after building the canonical data:
+
+```bash
+npm run data:build
+npm run api:dev
+```
+
+The API runs at `http://localhost:8000`. Interactive OpenAPI documentation is
+available in Swagger UI at `http://localhost:8000/docs`, with ReDoc at
+`http://localhost:8000/redoc` and the raw schema at
+`http://localhost:8000/openapi.json`.
+
+Copy `.env.example` to `.env` when configuring local environment values. Set
+`GEMINI_API_KEY` to enable Gemini summaries (the key is read only by FastAPI,
+never by Vite). Set `CORS_ORIGINS` to a comma-separated list when the frontend
+runs on more than one origin.
+
+Available endpoints:
+
+- `GET /api/health`
+- `GET /api/wards`
+- `GET /api/wards/{ward_code}`
+- `POST /api/wards/{ward_code}/summary`
+
+With an API key, the summary endpoint uses Gemini with structured JSON, a
+low-temperature prompt, number allow-list validation and one retry. Every
+result is cached in SQLite by ward, dataset version and UTC day, so repeated
+clicks make no further AI requests. If no key is configured, or generation or
+validation fails, it returns a deterministic, data-grounded fallback. The cache
+and audit log database is excluded from Git; set `WARD_SUMMARY_CACHE_DB` if a
+different persistent location is needed in production.
+
+The React interface is available at `/ward-insights`. It reads the API URL from
+`VITE_API_URL`, displays the exact source figures used for each briefing, and
+keeps general NHS/NICE guidance separate from ward-level statistical comparisons.
 
 ## Testing
 

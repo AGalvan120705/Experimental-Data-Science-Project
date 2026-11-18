@@ -11,8 +11,10 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "test:py": "python3 -m pytest src/Data/scripts/tests -q",
-    "test:py:coverage": "python3 -m pytest src/Data/scripts/tests --cov=src/Data/scripts --cov-config=.coveragerc --cov-report=term-missing --cov-report=html:htmlcov_py"
+    "data:build": "python3 src/Data/scripts/build_ward_insights.py",
+    "api:dev": "python3 -m uvicorn src.api.main:app --reload --port 8000",
+    "test:py": "python3 -m pytest src/Data/scripts/tests src/api/tests -q",
+    "test:py:coverage": "python3 -m pytest src/Data/scripts/tests src/api/tests --cov=src/Data/scripts --cov=src/api --cov-config=.coveragerc --cov-report=term-missing --cov-report=html:htmlcov_py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
